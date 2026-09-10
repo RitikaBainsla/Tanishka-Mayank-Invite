@@ -9,7 +9,7 @@
 html,body{margin:0;padding:0;background:#000;color:#fff}
 body{overflow-x:hidden}
 #intro{position:fixed;inset:0;z-index:1000;background:#000;display:flex;align-items:center;justify-content:center}
-#intro video{width:100%;height:100%;object-fit:contain;background:#000}
+#intro video{vertical-align:top;width:100%;height:100%;object-fit:contain;background:#000}
 #tap{position:absolute;bottom:8vh;left:50%;transform:translateX(-50%);
  padding:15px 31px;border:1px solid rgba(255,255,255,.9);border-radius:999px;
  background:rgba(0,0,0,.22);color:#fff;letter-spacing:2px;text-transform:uppercase;
@@ -22,7 +22,7 @@ body{overflow-x:hidden}
  position:relative;width:100%;height:100svh;min-height:520px;
  background:#000;overflow:hidden;display:flex;align-items:center;justify-content:center;
 }
-.slide video{
+.slide video{vertical-align:top;
  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
  background:#000;z-index:2;
 }
@@ -42,7 +42,7 @@ body{overflow-x:hidden}
  background:#fffaf5;overflow:hidden;display:flex;align-items:center;justify-content:center;
 }
 .scratch-art{position:relative;height:100%;width:min(100vw,56.314vw);min-width:min(100vw,calc(100svh * .56314));max-width:100vw}
-.scratch-art>img{display:block;width:100%;height:100%;object-fit:fill}
+.scratch-art>img{vertical-align:top;display:block;width:100%;height:100%;object-fit:fill}
 .scratch-page .scratch-wrap{
  position:absolute;left:50%;top:48.1%;transform:translate(-50%,-50%);
  width:60.5%;height:10.7%;border-radius:18px;overflow:hidden;
@@ -93,6 +93,52 @@ body{overflow-x:hidden}
 .map iframe{width:100%;height:100%;border:0;display:block}
 .dir{margin-top:22px;padding:14px 24px;border-radius:999px;background:#a98762;color:#fff;
  text-decoration:none;font:600 12px Arial,sans-serif;letter-spacing:1.4px}
+
+/* Gap-free scrolling fix: each invitation video occupies one exact viewport frame. */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #000;
+}
+.slide {
+  position: relative !important;
+  width: 100% !important;
+  height: 100svh !important;
+  min-height: 100svh !important;
+  max-height: 100svh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: block !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+.slide video,
+.slide img.poster {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+.slide .petals {
+  position: absolute !important;
+  inset: 0 !important;
+}
+.scratch-page,
+.map-page {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 </style>
 </head>
 <body>
