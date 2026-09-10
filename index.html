@@ -139,8 +139,16 @@ tap.onclick=async()=>{
  try{
    curtain.currentTime=0;
    await curtain.play();
-   // User gesture also authorizes music when the optional MP3 is present.
-   if(audio.src && audio.readyState>=0){ audio.volume=.34; audio.play().then(()=>music.classList.add('on')).catch(()=>{}); }
+   // The Tap to Open click is a user gesture, so start the supplied music here.
+   audio.volume=.34;
+   audio.load();
+   audio.play().then(()=>{
+     music.classList.add('on');
+     music.textContent='♫';
+   }).catch(()=>{
+     // If the browser blocks playback for any reason, the visible music button remains available.
+     music.classList.add('on');
+   });
  }catch(e){tap.style.display='block'}
 };
 curtain.onended=()=>{intro.classList.add('out');setTimeout(()=>intro.remove(),780)};
