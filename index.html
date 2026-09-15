@@ -152,6 +152,14 @@ html, body {
   user-select:none;
 }
 
+
+/* Android edge-line fix: overscan only slide 3 so no source-video edge is visible. */
+.slide[data-slide="3"] video,
+.slide[data-slide="3"] .poster {
+  transform: scale(1.02) !important;
+  transform-origin: center center !important;
+}
+
 </style>
 </head>
 <body>
