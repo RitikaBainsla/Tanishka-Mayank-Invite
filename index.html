@@ -161,6 +161,15 @@ html, body {
   transform-origin: center center !important;
 }
 
+
+/* First-page scroll prompt */
+.slide[data-slide="1"] .scroll-down{position:absolute;left:50%;bottom:3.5%;transform:translateX(-50%);z-index:7;color:#fff;font:500 11px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;text-shadow:0 1px 5px rgba(0,0,0,.5);pointer-events:none;animation:scrollPulse 1.8s ease-in-out infinite}
+.slide[data-slide="1"] .scroll-down::after{content:'↓';display:block;text-align:center;margin-top:5px;font-size:18px;line-height:1}
+@keyframes scrollPulse{0%,100%{opacity:.45;transform:translateX(-50%) translateY(0)}50%{opacity:1;transform:translateX(-50%) translateY(4px)}}
+.scratch-page .reveal{flex-direction:column !important;gap:5px}
+.scratch-page .scratch-date{display:block}
+.scratch-page .scratch-venue{font-family:Arial,sans-serif;font-size:clamp(8px,1vw,14px);font-weight:600;letter-spacing:.18em;color:#66745e;text-transform:uppercase}
+
 </style>
 </head>
 <body>
@@ -183,7 +192,7 @@ html, body {
    <source src="13.mp4" type="video/mp4">
  </video>
  <div class="scratch-wrap">
-  <div class="reveal">24ᵗʰ - 25ᵗʰ November, 2026</div>
+  <div class="reveal"><div class="scratch-date">24ᵗʰ - 25ᵗʰ November, 2026</div><div class="scratch-venue">ITC RAJPUTANA, JAIPUR</div></div>
   <div class="scratch-paper">SCRATCH HERE</div>
   <canvas id="scratch"></canvas>
  </div>
@@ -254,6 +263,12 @@ order.forEach(item=>{
  const v=document.createElement('video');v.src=item+'.mp4';v.playsInline=true;v.muted=true;v.preload='auto';v.setAttribute('webkit-playsinline','');
  v.playbackRate=.65;
  s.appendChild(poster);s.appendChild(v);
+ if(item==='1'){
+  const scroll=document.createElement('div');
+  scroll.className='scroll-down';
+  scroll.textContent='SCROLL DOWN';
+  s.appendChild(scroll);
+ }
  const watermark=document.createElement('img');
  watermark.className='site-watermark';
  watermark.src='Watermark.png';
