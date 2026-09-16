@@ -163,9 +163,11 @@ html, body {
 
 
 /* First-page scroll prompt */
-.slide[data-slide="1"] .scroll-down{position:absolute;left:50%;bottom:3.5%;transform:translateX(-50%);z-index:7;color:#fff;font:500 11px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;text-shadow:0 1px 5px rgba(0,0,0,.5);pointer-events:none;animation:scrollPulse 1.8s ease-in-out infinite}
-.slide[data-slide="1"] .scroll-down::after{content:'↓';display:block;text-align:center;margin-top:5px;font-size:18px;line-height:1}
-@keyframes scrollPulse{0%,100%{opacity:.45;transform:translateX(-50%) translateY(0)}50%{opacity:1;transform:translateX(-50%) translateY(4px)}}
+.slide[data-slide="1"] .scroll-down{position:absolute;left:50%;bottom:3.2%;transform:translateX(-50%);z-index:7;color:#fff;font:700 clamp(14px,1.7vw,22px) Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;text-shadow:0 2px 10px rgba(0,0,0,.75),0 0 16px rgba(255,255,255,.35);pointer-events:none;animation:scrollPulse 1.45s ease-in-out infinite;padding:10px 18px 12px;border:1px solid rgba(255,255,255,.7);border-radius:999px;background:rgba(0,0,0,.22);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.slide[data-slide="1"] .scroll-down::before{content:'';position:absolute;inset:-4px;border:1px solid rgba(255,255,255,.28);border-radius:999px;animation:scrollRing 1.45s ease-in-out infinite}
+.slide[data-slide="1"] .scroll-down::after{content:'↓';display:block;text-align:center;margin-top:6px;font-size:28px;line-height:1;font-weight:700}
+@keyframes scrollPulse{0%,100%{opacity:.72;transform:translateX(-50%) translateY(0) scale(1)}50%{opacity:1;transform:translateX(-50%) translateY(5px) scale(1.035)}}
+@keyframes scrollRing{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:.75;transform:scale(1.06)}}
 .scratch-page .reveal{flex-direction:column !important;gap:5px}
 .scratch-page .scratch-date{display:block}
 .scratch-page .scratch-venue{font-family:Arial,sans-serif;font-size:clamp(8px,1vw,14px);font-weight:600;letter-spacing:.18em;color:#66745e;text-transform:uppercase}
