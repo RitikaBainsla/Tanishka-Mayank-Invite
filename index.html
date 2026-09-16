@@ -168,9 +168,6 @@ html, body {
 .slide[data-slide="1"] .scroll-down::after{content:'↓';display:block;text-align:center;margin-top:6px;font-size:28px;line-height:1;font-weight:700}
 @keyframes scrollPulse{0%,100%{opacity:.72;transform:translateX(-50%) translateY(0) scale(1)}50%{opacity:1;transform:translateX(-50%) translateY(5px) scale(1.035)}}
 @keyframes scrollRing{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:.75;transform:scale(1.06)}}
-.scratch-page .reveal{flex-direction:column !important;gap:5px}
-.scratch-page .scratch-date{display:block}
-.scratch-page .scratch-venue{font-family:Arial,sans-serif;font-size:clamp(8px,1vw,14px);font-weight:600;letter-spacing:.18em;color:#66745e;text-transform:uppercase}
 
 </style>
 </head>
@@ -190,11 +187,11 @@ html, body {
 
 <section class="scratch-page" id="scratchPage">
  <video class="scratch-video" id="scratchVideo" playsinline muted preload="auto"
-   poster="13-poster.jpg" aria-label="Animated scratch card background">
-   <source src="13.mp4" type="video/mp4">
+   poster="11-poster.jpg" aria-label="Animated scratch card background">
+   <source src="11.mp4" type="video/mp4">
  </video>
  <div class="scratch-wrap">
-  <div class="reveal"><div class="scratch-date">24ᵗʰ - 25ᵗʰ November, 2026</div><div class="scratch-venue">ITC RAJPUTANA, JAIPUR</div></div>
+  <div class="reveal"><div class="scratch-date">24ᵗʰ - 25ᵗʰ November, 2026</div></div>
   <div class="scratch-paper">SCRATCH HERE</div>
   <canvas id="scratch"></canvas>
  </div>
