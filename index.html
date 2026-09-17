@@ -141,19 +141,6 @@ html, body {
 }
 
 
-/* Designer watermark overlay */
-.slide .site-watermark{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:5;
-  pointer-events:none;
-  user-select:none;
-}
-
-
 /* Android edge-line fix: overscan only slide 3 so no source-video edge is visible. */
 .slide[data-slide="3"] video,
 .slide[data-slide="3"] .poster {
@@ -268,12 +255,6 @@ order.forEach(item=>{
   scroll.textContent='SCROLL DOWN';
   s.appendChild(scroll);
  }
- const watermark=document.createElement('img');
- watermark.className='site-watermark';
- watermark.src='Watermark.png';
- watermark.alt='';
- watermark.setAttribute('aria-hidden','true');
- s.appendChild(watermark);
  const petals=document.createElement('div');petals.className='petals';makePetals(petals);s.appendChild(petals);
  host.appendChild(s);
  // Put scratch page immediately before Welcome Lunch & Haldi (video 3).
